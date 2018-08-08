@@ -20,10 +20,14 @@ public class ForumServiceTest {
    */
   @Test
   public void jdkProxy() {
+    // 被代理的目标业务类
     ForumService target = new ForumServiceImpl();
+    // 将目标业务类与横切代码编织在一起
     PerformaceHandler handler = new PerformaceHandler(target);
-    ForumService proxy = (ForumService) Proxy.newProxyInstance(target
-        .getClass().getClassLoader(), target.getClass().getInterfaces(), handler);
+    ForumService proxy = (ForumService) Proxy.newProxyInstance(
+        target.getClass().getClassLoader(),//类加载器
+        target.getClass().getInterfaces(),//目标业务类实现的接口
+        handler);//编织器
     proxy.removeForum(10);
     proxy.removeTopic(1012);
   }
