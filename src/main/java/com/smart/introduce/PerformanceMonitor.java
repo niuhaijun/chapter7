@@ -18,6 +18,6 @@ public class PerformanceMonitor {
   public static void end() {
     System.out.println("end monitor...");
     MethodPerformance mp = performaceRecord.get();
-    mp.printPerformace();
+    mp.printPerformance();
   }
 }

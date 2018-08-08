@@ -10,7 +10,7 @@ public class MethodPerformance {
     reset(serviceMethod);
   }
 
-  public void printPerformace() {
+  public void printPerformance() {
     end = System.currentTimeMillis();
     long elapse = end - begin;
     System.out.println(serviceMethod + "花费" + elapse + "毫秒。");
