@@ -1,4 +1,3 @@
-
 package com.smart.aop;
 
 import org.slf4j.Logger;
@@ -15,28 +14,28 @@ import java.util.Map;
 @Component
 public class BeanSelfProxyAwareMounter implements SystemBootAddon, ApplicationContextAware {
 
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
+  private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    private ApplicationContext applicationContext;
+  private ApplicationContext applicationContext;
 
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-       this.applicationContext = applicationContext;
-    }
+  public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+    this.applicationContext = applicationContext;
+  }
 
-    public void onReady() {
-        Map<String, BeanSelfProxyAware> proxyAwareMap =
-                applicationContext.getBeansOfType(BeanSelfProxyAware.class);
-        if(proxyAwareMap!=null){
-            for (BeanSelfProxyAware beanSelfProxyAware : proxyAwareMap.values()) {
-                beanSelfProxyAware.setSelfProxy(beanSelfProxyAware);
-                if (logger.isDebugEnabled()) {
-                    logger.debug("{}注册自身被代理的实例.");
-                }
-            }
+  public void onReady() {
+    Map<String, BeanSelfProxyAware> proxyAwareMap =
+        applicationContext.getBeansOfType(BeanSelfProxyAware.class);
+    if (proxyAwareMap != null) {
+      for (BeanSelfProxyAware beanSelfProxyAware : proxyAwareMap.values()) {
+        beanSelfProxyAware.setSelfProxy(beanSelfProxyAware);
+        if (logger.isDebugEnabled()) {
+          logger.debug("{}注册自身被代理的实例.");
         }
+      }
     }
+  }
 
-    public int getOrder() {
-        return Ordered.HIGHEST_PRECEDENCE;
-    }
+  public int getOrder() {
+    return Ordered.HIGHEST_PRECEDENCE;
+  }
 }

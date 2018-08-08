@@ -1,6 +1,7 @@
 package com.smart.concept;
 
 public interface TransactionManager {
-    void beginTransaction();
-    void endTransaction();
+  void beginTransaction();
+
+  void endTransaction();
 }
