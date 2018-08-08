@@ -17,7 +17,7 @@ public class BeforeAdviceTest {
     BeforeAdvice advice = new GreetingBeforeAdvice();
     // 代理工厂
     ProxyFactory pf = new ProxyFactory();
-    // 设置代理的接口
+    // 指定对接口进行代理
     pf.setInterfaces(target.getClass().getInterfaces());
     // 启动优化，使用Cglib2AopProxy代理
     pf.setOptimize(true);
@@ -29,4 +29,5 @@ public class BeforeAdviceTest {
     Waiter proxy = (Waiter) pf.getProxy();
     proxy.greetTo("John");
     proxy.serveTo("Tom");
-  }}
+  }
+}
