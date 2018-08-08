@@ -4,6 +4,7 @@ package com.smart.advisor;
 import com.smart.aop.BeanSelfProxyAware;
 
 public class Waiter implements BeanSelfProxyAware {
+
   private Waiter waiter;
 
   public void setSelfProxy(Object object) {

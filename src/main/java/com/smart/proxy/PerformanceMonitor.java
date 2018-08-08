@@ -1,6 +1,7 @@
 package com.smart.proxy;
 
 public class PerformanceMonitor {
+
   private static ThreadLocal<MethodPerformace> performaceRecord = new ThreadLocal<MethodPerformace>();
 
   public static void begin(String method) {

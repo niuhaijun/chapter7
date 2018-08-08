@@ -2,7 +2,6 @@ package com.smart.advisor;
 
 import com.smart.introduce.ForumService;
 import com.smart.introduce.Monitorable;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.annotations.Test;

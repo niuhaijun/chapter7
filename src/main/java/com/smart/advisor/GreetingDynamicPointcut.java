@@ -1,12 +1,12 @@
 package com.smart.advisor;
 
-import org.springframework.aop.support.DynamicMethodMatcherPointcut;
-
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.aop.support.DynamicMethodMatcherPointcut;
 
 public class GreetingDynamicPointcut extends DynamicMethodMatcherPointcut {
+
   private static List<String> specialClientList = new ArrayList<String>();
 
   static {
@@ -27,7 +27,8 @@ public class GreetingDynamicPointcut extends DynamicMethodMatcherPointcut {
 //		return "greetTo".equals(method.getName());
 //	}
   public boolean matches(Method method, Class clazz, Object[] args) {
-    System.out.println("调用matches(method,clazz)对" + clazz.getName() + "." + method.getName() + "做动态检查.");
+    System.out
+        .println("调用matches(method,clazz)对" + clazz.getName() + "." + method.getName() + "做动态检查.");
     String clientName = (String) args[0];
     return specialClientList.contains(clientName);
   }

@@ -1,6 +1,7 @@
 package com.smart.concept;
 
 public class ForumService {
+
   private TransactionManager transManager;
   private PerformanceMonitor pmonitor;
   private TopicDao topicDao;

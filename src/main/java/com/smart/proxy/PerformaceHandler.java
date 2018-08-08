@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
 public class PerformaceHandler implements InvocationHandler {
+
   private Object target;
 
   public PerformaceHandler(Object target) {

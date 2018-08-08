@@ -1,6 +1,7 @@
 package com.smart.proxy;
 
 public class MethodPerformace {
+
   private long begin;
   private long end;
   private String serviceMethod;

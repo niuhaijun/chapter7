@@ -1,6 +1,7 @@
 package com.smart.advice;
 
 public class Forum {
+
   private int forumId;
 
   public int getForumId() {

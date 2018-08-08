@@ -1,6 +1,7 @@
 package com.smart.advisor;
 
 public class WaiterDelegate {
+
   private Waiter waiter;
 
   public void service(String clientName) {

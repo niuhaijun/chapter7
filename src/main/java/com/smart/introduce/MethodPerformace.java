@@ -1,6 +1,7 @@
 package com.smart.introduce;
 
 public class MethodPerformace {
+
   private long begin;
   private long end;
   private String serviceMethod;

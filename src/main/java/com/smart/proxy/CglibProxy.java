@@ -1,12 +1,12 @@
 package com.smart.proxy;
 
+import java.lang.reflect.Method;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
 
-import java.lang.reflect.Method;
-
 public class CglibProxy implements MethodInterceptor {
+
   private Enhancer enhancer = new Enhancer();
 
   public Object getProxy(Class clazz) {
@@ -16,7 +16,7 @@ public class CglibProxy implements MethodInterceptor {
   }
 
   public Object intercept(Object obj, Method method, Object[] args,
-                          MethodProxy proxy) throws Throwable {
+      MethodProxy proxy) throws Throwable {
     PerformanceMonitor.begin(obj.getClass().getName() + "." + method.getName());
     Object result = proxy.invokeSuper(obj, args);
     PerformanceMonitor.end();

@@ -2,7 +2,6 @@ package com.smart.autoproxy;
 
 import com.smart.advisor.Seller;
 import com.smart.advisor.Waiter;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.annotations.Test;

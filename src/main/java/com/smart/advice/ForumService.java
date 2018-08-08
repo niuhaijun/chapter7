@@ -3,6 +3,7 @@ package com.smart.advice;
 import java.sql.SQLException;
 
 public class ForumService {
+
   public void removeForum(int forumId) {
     // do sth...
     throw new RuntimeException("运行异常。");

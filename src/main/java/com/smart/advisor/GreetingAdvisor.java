@@ -1,9 +1,8 @@
 package com.smart.advisor;
 
+import java.lang.reflect.Method;
 import org.springframework.aop.ClassFilter;
 import org.springframework.aop.support.StaticMethodMatcherPointcutAdvisor;
-
-import java.lang.reflect.Method;
 
 public class GreetingAdvisor extends StaticMethodMatcherPointcutAdvisor {
 
