@@ -11,6 +11,7 @@ public class PerformaceHandler implements InvocationHandler {
     this.target = target;
   }
 
+  @Override
   public Object invoke(Object proxy, Method method, Object[] args)
       throws Throwable {
     PerformanceMonitor.begin(target.getClass().getName() + "." + method.getName());

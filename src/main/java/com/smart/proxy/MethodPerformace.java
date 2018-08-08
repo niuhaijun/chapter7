@@ -1,5 +1,8 @@
 package com.smart.proxy;
 
+/**
+ * 记录开始执行时间，执行完毕时间
+ */
 public class MethodPerformace {
 
   private long begin;

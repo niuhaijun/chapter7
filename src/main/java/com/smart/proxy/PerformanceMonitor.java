@@ -1,5 +1,8 @@
 package com.smart.proxy;
 
+/**
+ * 性能监视器
+ */
 public class PerformanceMonitor {
 
   private static ThreadLocal<MethodPerformace> performaceRecord = new ThreadLocal<MethodPerformace>();
