@@ -1,12 +1,12 @@
 package com.smart.introduce;
 
-public class MethodPerformace {
+public class MethodPerformance {
 
   private long begin;
   private long end;
   private String serviceMethod;
 
-  public MethodPerformace(String serviceMethod) {
+  public MethodPerformance(String serviceMethod) {
     reset(serviceMethod);
   }
 
