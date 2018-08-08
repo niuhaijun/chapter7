@@ -26,8 +26,8 @@ public class ForumServiceTest {
     PerformaceHandler handler = new PerformaceHandler(target);
     ForumService proxy = (ForumService) Proxy.newProxyInstance(
         target.getClass().getClassLoader(),//类加载器
-        target.getClass().getInterfaces(),//目标业务类实现的接口
-        handler);//编织器
+        target.getClass().getInterfaces(),//创建代理实例所需实现的一组接口
+        handler);//整合了业务逻辑与横切逻辑的编织器对象
     proxy.removeForum(10);
     proxy.removeTopic(1012);
   }
@@ -38,6 +38,7 @@ public class ForumServiceTest {
   @Test
   public void cglibProxy() {
     CglibProxy cglibProxy = new CglibProxy();
+    // 通过动态生成子类的方式创建代理类
     ForumService forumService = (ForumService) cglibProxy.getProxy(ForumServiceImpl.class);
     forumService.removeForum(10);
     forumService.removeTopic(1023);
