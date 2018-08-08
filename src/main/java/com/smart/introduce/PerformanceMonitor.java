@@ -2,14 +2,14 @@ package com.smart.introduce;
 
 public class PerformanceMonitor {
 
-  private static ThreadLocal<MethodPerformance> performaceRecord = new ThreadLocal<MethodPerformance>();
+  private static ThreadLocal<MethodPerformance> performanceRecord = new ThreadLocal<MethodPerformance>();
 
   public static void begin(String method) {
     System.out.println("begin monitor...");
-    MethodPerformance mp = performaceRecord.get();
+    MethodPerformance mp = performanceRecord.get();
     if (mp == null) {
       mp = new MethodPerformance(method);
-      performaceRecord.set(mp);
+      performanceRecord.set(mp);
     } else {
       mp.reset(method);
     }
@@ -17,7 +17,7 @@ public class PerformanceMonitor {
 
   public static void end() {
     System.out.println("end monitor...");
-    MethodPerformance mp = performaceRecord.get();
+    MethodPerformance mp = performanceRecord.get();
     mp.printPerformance();
   }
 }
