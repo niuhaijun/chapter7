@@ -73,7 +73,7 @@
   <bean class="org.springframework.aop.support.DefaultIntroductionAdvisor"
     id="introduceAdvisor">
     <constructor-arg>
-      <bean class="com.smart.introduce.ControllablePerformaceMonitor"/>
+      <bean class="com.smart.introduce.ControllablePerformanceMonitor"/>
     </constructor-arg>
   </bean>
   <bean class="com.smart.introduce.ForumService" id="forumServiceTarget"/>

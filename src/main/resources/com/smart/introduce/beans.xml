@@ -5,7 +5,7 @@
   xsi:schemaLocation="http://www.springframework.org/schema/beans
      http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
-  <bean class="com.smart.introduce.ControllablePerformaceMonitor" id="pmonitor"/>
+  <bean class="com.smart.introduce.ControllablePerformanceMonitor" id="pmonitor"/>
   <bean class="com.smart.introduce.ForumService" id="forumServiceTarget"/>
   <bean class="org.springframework.aop.framework.ProxyFactoryBean" id="forumService"
     p:interceptorNames="pmonitor"

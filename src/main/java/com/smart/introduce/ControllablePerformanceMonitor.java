@@ -3,7 +3,7 @@ package com.smart.introduce;
 import org.aopalliance.intercept.MethodInvocation;
 import org.springframework.aop.support.DelegatingIntroductionInterceptor;
 
-public class ControllablePerformaceMonitor
+public class ControllablePerformanceMonitor
     extends DelegatingIntroductionInterceptor implements Monitorable, Testable {
 
   private ThreadLocal<Boolean> MonitorStatusMap = new ThreadLocal<Boolean>();
