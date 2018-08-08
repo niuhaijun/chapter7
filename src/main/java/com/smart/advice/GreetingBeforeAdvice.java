@@ -3,6 +3,9 @@ package com.smart.advice;
 import java.lang.reflect.Method;
 import org.springframework.aop.MethodBeforeAdvice;
 
+/**
+ * 前置增强
+ */
 public class GreetingBeforeAdvice implements MethodBeforeAdvice {
 
   /**
