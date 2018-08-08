@@ -10,7 +10,7 @@ public class AdviceTest {
   public void advice() {
     String configPath = "com/smart/advice/beans.xml";
     ApplicationContext ctx = new ClassPathXmlApplicationContext(configPath);
-    Waiter waiter = (Waiter) ctx.getBean("waiter");
+    Waiter waiter = ctx.getBean("waiter", Waiter.class);
     waiter.greetTo("John");
   }
 }
