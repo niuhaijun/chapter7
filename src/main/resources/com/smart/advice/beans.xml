@@ -5,41 +5,46 @@
   xsi:schemaLocation="http://www.springframework.org/schema/beans
      http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
-  <bean class="com.smart.advice.GreetingBeforeAdvice" id="greetingBefore"/>
-  <bean class="com.smart.advice.GreetingAfterAdvice" id="greetingAfter"/>
-  <bean class="com.smart.advice.GreetingBeforeAdvice" id="greetingAdvice"/>
-  <bean class="com.smart.advice.GreetingInterceptor" id="greetingAround"/>
-  <bean class="com.smart.advice.NaiveWaiter" id="target"/>
+  <!--1. BeforeAdvice -->
+  <bean id="target1" class="com.smart.advice.NaiveWaiter"/>
+  <bean id="greetingBeforeAdvice" class="com.smart.advice.GreetingBeforeAdvice"/>
+  <bean id="waiter1" class="org.springframework.aop.framework.ProxyFactoryBean"
+    p:target-ref="target1"
+    p:interceptorNames="greetingBeforeAdvice"
+    p:proxyInterfaces="com.smart.advice.Waiter"/>
+
+  <!--2. AfterAdvice -->
+  <bean id="target2" class="com.smart.advice.NaiveWaiter"/>
+  <bean id="greetingAfterAdvice" class="com.smart.advice.GreetingAfterAdvice"/>
+  <bean id="waiter2" class="org.springframework.aop.framework.ProxyFactoryBean"
+    p:target-ref="target2"
+    p:interceptorNames="greetingAfterAdvice"
+    p:proxyInterfaces="com.smart.advice.Waiter"/>
+
+  <!--3. BeforeAdvice AND AfterAdvice -->
+  <bean id="target3" class="com.smart.advice.NaiveWaiter"/>
+  <bean id="greetingBeforeAdvice1" class="com.smart.advice.GreetingBeforeAdvice"/>
+  <bean id="greetingAfterAdvice1" class="com.smart.advice.GreetingAfterAdvice"/>
+  <bean id="waiter3" class="org.springframework.aop.framework.ProxyFactoryBean"
+    p:target-ref="target3"
+    p:interceptorNames="greetingBeforeAdvice1,greetingAfterAdvice1"
+    p:proxyInterfaces="com.smart.advice.Waiter"/>
+
+  <!--4. AroundAdvice -->
+  <bean id="target4" class="com.smart.advice.NaiveWaiter"/>
+  <bean id="greetingAround" class="com.smart.advice.GreetingInterceptor"/>
+  <bean id="waiter4" class="org.springframework.aop.framework.ProxyFactoryBean"
+    p:target-ref="target4"
+    p:interceptorNames="greetingAround"
+    p:proxyInterfaces="com.smart.advice.Waiter"/>
 
 
-  <!--1. greetingAdvice -->
-  <!--
-      bean id="waiter"
-      class="org.springframework.aop.framework.ProxyFactoryBean"
-      p:proxyInterfaces="com.smart.advice.Waiter" p:target-ref="target"
-      p:interceptorNames="greetingAdvice"/
-  -->
-
-
-  <!--2. before and after advice -->
-  <!--
-      bean id="waiter"
-      class="org.springframework.aop.framework.ProxyFactoryBean"
-      p:proxyInterfaces="com.smart.advice.Waiter" p:target-ref="target"
-      p:interceptorNames="greetingBefore,greetingAfter"/
-  -->
-  <!--3. around advice -->
-  <bean class="org.springframework.aop.framework.ProxyFactoryBean" id="waiter"
-    p:interceptorNames="greetingAround" p:proxyInterfaces="com.smart.advice.Waiter"
-    p:target-ref="target"/>
-
-
-  <!--4. 异常抛出增强  -->
-  <bean class="com.smart.advice.ForumService" id="forumServiceTarget"/>
-  <bean class="com.smart.advice.TransactionManager" id="transactionManager"/>
-  <bean class="org.springframework.aop.framework.ProxyFactoryBean" id="forumService"
+  <!--5. 异常抛出增强  -->
+  <bean id="target5" class="com.smart.advice.ForumService"/>
+  <bean id="transactionManager" class="com.smart.advice.TransactionManager"/>
+  <bean id="forumService" class="org.springframework.aop.framework.ProxyFactoryBean"
+    p:target-ref="target5"
     p:interceptorNames="transactionManager"
-    p:proxyTargetClass="true"
-    p:target-ref="forumServiceTarget"/>
+    p:proxyTargetClass="true"/>
 
 </beans>
