@@ -1,5 +1,8 @@
 package com.smart.introduce;
 
+/**
+ * 目标类需要实现的接口
+ */
 public interface Monitorable {
 
   /**
