@@ -44,6 +44,6 @@
   <bean id="forumService" class="org.springframework.aop.framework.ProxyFactoryBean"
     p:target-ref="target5"
     p:interceptorNames="transactionManager"
-    p:proxyTargetClass="true"/>
+    p:proxyTargetClass="true"/>//ForumService是类，使用CGLib代理
 
 </beans>
