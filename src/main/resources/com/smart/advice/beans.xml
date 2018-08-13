@@ -38,7 +38,6 @@
     p:interceptorNames="greetingAround"
     p:proxyInterfaces="com.smart.advice.Waiter"/>
 
-
   <!--5. 异常抛出增强  -->
   <bean id="target5" class="com.smart.advice.ForumService"/>
   <bean id="transactionManager" class="com.smart.advice.TransactionManager"/>
