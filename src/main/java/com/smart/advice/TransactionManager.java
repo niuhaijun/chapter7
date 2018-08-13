@@ -12,7 +12,7 @@ public class TransactionManager implements ThrowsAdvice {
    * ThrowsAdvice是一个标记接口， 方法名必须为afterThrowing，
    *
    * @param method 目标方法对象
-   * @param args 目标方法入参，前三个入参要么全有，要么全没有
+   * @param args 目标方法入参，前三个入参要么全有，要么全没有。最后一个入参是Throwable或其子类
    * @param target 目标对象
    * @param ex 目标方法抛出的异常对象
    * @throws Throwable 异常
