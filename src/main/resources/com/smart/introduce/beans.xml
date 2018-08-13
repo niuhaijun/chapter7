@@ -5,11 +5,11 @@
   xsi:schemaLocation="http://www.springframework.org/schema/beans
      http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
-  <bean class="com.smart.introduce.ControllablePerformanceMonitor" id="pmonitor"/>
-  <bean class="com.smart.introduce.ForumService" id="forumServiceTarget"/>
-  <bean class="org.springframework.aop.framework.ProxyFactoryBean" id="forumService"
+  <bean id="pmonitor" class="com.smart.introduce.ControllablePerformanceMonitor"/>
+  <bean id="target" class="com.smart.introduce.ForumService"/>
+  <bean id="forumService" class="org.springframework.aop.framework.ProxyFactoryBean"
+    p:target-ref="target"
     p:interceptorNames="pmonitor"
     p:interfaces="com.smart.introduce.Monitorable"
-    p:proxyTargetClass="true"
-    p:target-ref="forumServiceTarget"/>
+    p:proxyTargetClass="true"/>
 </beans>
