@@ -3,6 +3,9 @@ package com.smart.advice;
 import java.lang.reflect.Method;
 import org.springframework.aop.AfterReturningAdvice;
 
+/**
+ * 后置增强
+ */
 public class GreetingAfterAdvice implements AfterReturningAdvice {
 
   @Override
