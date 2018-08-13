@@ -1,5 +1,8 @@
 package com.smart.introduce;
 
+/**
+ * 性能监视器，横切代码
+ */
 public class PerformanceMonitor {
 
   private static ThreadLocal<MethodPerformance> performanceRecord = new ThreadLocal<MethodPerformance>();

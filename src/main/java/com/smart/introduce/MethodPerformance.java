@@ -1,5 +1,8 @@
 package com.smart.introduce;
 
+/**
+ * 记录时间点
+ */
 public class MethodPerformance {
 
   private long begin;

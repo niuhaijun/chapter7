@@ -1,5 +1,8 @@
 package com.smart.introduce;
 
+/**
+ * 业务类
+ */
 public class ForumService {
 
   public void removeTopic(int topicId) {
@@ -9,7 +12,6 @@ public class ForumService {
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
-
   }
 
   public void removeForum(int forumId) {

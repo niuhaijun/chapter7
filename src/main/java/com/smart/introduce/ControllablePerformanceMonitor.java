@@ -3,6 +3,9 @@ package com.smart.introduce;
 import org.aopalliance.intercept.MethodInvocation;
 import org.springframework.aop.support.DelegatingIntroductionInterceptor;
 
+/**
+ * 引介增强
+ */
 public class ControllablePerformanceMonitor extends DelegatingIntroductionInterceptor
     implements Monitorable, Testable {
 
