@@ -12,4 +12,5 @@
     p:interceptorNames="pmonitor"
     p:interfaces="com.smart.introduce.Monitorable"
     p:proxyTargetClass="true"/>
+
 </beans>
