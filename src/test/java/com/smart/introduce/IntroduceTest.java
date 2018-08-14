@@ -4,6 +4,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.annotations.Test;
 
+/**
+ * 引介增强
+ */
 public class IntroduceTest {
 
   @Test
