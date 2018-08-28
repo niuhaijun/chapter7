@@ -5,7 +5,7 @@
   xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
-  <!-- 普通方法名匹配切面 -->
+  <!-- 静态方法匹配器切点切面 -->
   <bean id="waiterTarget" class="com.smart.advisor.Waiter"/>
   <bean id="sellerTarget" class="com.smart.advisor.Seller"/>
   <bean id="greetingAdvice" class="com.smart.advisor.GreetingBeforeAdvice"/>
