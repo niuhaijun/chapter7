@@ -18,8 +18,10 @@ public class GreetingDynamicPointcut extends DynamicMethodMatcherPointcut {
     specialClientList.add("Tom");
   }
 
+  @Override
   public ClassFilter getClassFilter() {
     return new ClassFilter() {
+      @Override
       public boolean matches(Class clazz) {
         System.out.println("调用getClassFilter()对" + clazz.getName() + "做静态检查.");
         return Waiter.class.isAssignableFrom(clazz);
@@ -27,12 +29,14 @@ public class GreetingDynamicPointcut extends DynamicMethodMatcherPointcut {
     };
   }
 
+  @Override
   public boolean matches(Method method, Class clazz) {
     System.out.println("调用matches(method,clazz)对" + clazz.getName() + "."
         + method.getName() + "做静态检查.");
     return "greetTo".equals(method.getName());
   }
 
+  @Override
   public boolean matches(Method method, Class clazz, Object[] args) {
     System.out.println("调用matches(method,clazz)对" + clazz.getName() + "."
         + method.getName() + "做动态检查.");
