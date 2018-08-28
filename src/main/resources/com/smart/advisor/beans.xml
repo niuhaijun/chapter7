@@ -38,14 +38,11 @@
 
 
   <!-- 动态切面 -->
-  <bean id="dynamicAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
-    <property name="pointcut">
-      <bean class="com.smart.advisor.GreetingDynamicPointcut"/>
-    </property>
-    <property name="advice">
-      <bean class="com.smart.advisor.GreetingBeforeAdvice"/>
-    </property>
-  </bean>
+  <bean id="pointcut" class="com.smart.advisor.GreetingDynamicPointcut"/>
+  <bean id="advice" class="com.smart.advisor.GreetingBeforeAdvice"/>
+  <bean id="dynamicAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor"
+    p:pointcut-ref="pointcut"
+    p:advice-ref="greetingAdvice"/>
 
 
   <bean id="waiter2" class="org.springframework.aop.framework.ProxyFactoryBean"
