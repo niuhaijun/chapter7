@@ -38,6 +38,7 @@
 
 
   <!-- 动态切面 -->
+  <bean id="waiterTarget2" class="com.smart.advisor.Waiter"/>
   <bean id="pointcut" class="com.smart.advisor.GreetingDynamicPointcut"/>
   <bean id="advice" class="com.smart.advisor.GreetingBeforeAdvice"/>
   <bean id="dynamicAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor"
@@ -46,7 +47,8 @@
   <bean id="waiter2" class="org.springframework.aop.framework.ProxyFactoryBean"
     p:interceptorNames="dynamicAdvisor"
     p:proxyTargetClass="true"
-    p:target-ref="waiterTarget"/>
+    p:target-ref="waiterTarget2"/>
+
 
   <!-- 控制流程切面 -->
   <bean class="org.springframework.aop.support.ControlFlowPointcut" id="controlFlowPointcut">
