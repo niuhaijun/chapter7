@@ -20,7 +20,7 @@
     p:target-ref="sellerTarget"/>
 
 
-  <!-- 正则表达式方法名匹配切面 -->
+  <!-- 正则方法切点切面 -->
   <bean id="regexpAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor"
     p:advice-ref="greetingAdvice">
     <property name="patterns">
