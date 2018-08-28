@@ -42,9 +42,7 @@
   <bean id="advice" class="com.smart.advisor.GreetingBeforeAdvice"/>
   <bean id="dynamicAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor"
     p:pointcut-ref="pointcut"
-    p:advice-ref="greetingAdvice"/>
-
-
+    p:advice-ref="advice"/>
   <bean id="waiter2" class="org.springframework.aop.framework.ProxyFactoryBean"
     p:interceptorNames="dynamicAdvisor"
     p:proxyTargetClass="true"
