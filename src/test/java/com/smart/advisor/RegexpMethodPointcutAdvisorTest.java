@@ -4,13 +4,16 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.annotations.Test;
 
-public class RegexpAdvisorTest {
+/**
+ * 正则方法切点切面
+ */
+public class RegexpMethodPointcutAdvisorTest {
 
   @Test
   public void regexp() {
     String configPath = "com/smart/advisor/beans.xml";
     ApplicationContext ctx = new ClassPathXmlApplicationContext(configPath);
-    Waiter waiter = (Waiter) ctx.getBean("waiter1");
+    Waiter waiter = ctx.getBean("waiter1", Waiter.class);
     waiter.greetTo("John");
     waiter.serveTo("John");
   }

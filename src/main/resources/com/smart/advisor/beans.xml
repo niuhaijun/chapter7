@@ -21,8 +21,10 @@
 
 
   <!-- 正则方法切点切面 -->
+  <bean id="waiterTarget1" class="com.smart.advisor.Waiter"/>
+  <bean id="greetingAdvice1" class="com.smart.advisor.GreetingBeforeAdvice"/>
   <bean id="regexpAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor"
-    p:advice-ref="greetingAdvice">
+    p:advice-ref="greetingAdvice1">
     <property name="patterns">
       <list>
         <value>.*greet.*</value>
@@ -32,7 +34,7 @@
   <bean id="waiter1" class="org.springframework.aop.framework.ProxyFactoryBean"
     p:interceptorNames="regexpAdvisor"
     p:proxyTargetClass="true"
-    p:target-ref="waiterTarget"/>
+    p:target-ref="waiterTarget1"/>
 
 
   <!-- 动态切面 -->
