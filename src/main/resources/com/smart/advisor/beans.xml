@@ -11,7 +11,6 @@
   <bean id="greetingAdvice" class="com.smart.advisor.GreetingBeforeAdvice"/>
   <bean id="greetingAdvisor" class="com.smart.advisor.GreetingAdvisor"
     p:advice-ref="greetingAdvice"/>
-
   <bean id="parent" abstract="true" class="org.springframework.aop.framework.ProxyFactoryBean"
     p:interceptorNames="greetingAdvisor"
     p:proxyTargetClass="true"/>
