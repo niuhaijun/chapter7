@@ -2,6 +2,7 @@
 <beans xmlns:p="http://www.springframework.org/schema/p"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://www.springframework.org/schema/beans"
+  xmlns:c_1="http://www.springframework.org/schema/c"
   xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
@@ -51,18 +52,20 @@
 
 
   <!-- 控制流程切面 -->
-  <bean class="org.springframework.aop.support.ControlFlowPointcut" id="controlFlowPointcut">
+  <bean id="greetingAdvice3" class="com.smart.advisor.GreetingBeforeAdvice"/>
+  <bean id="controlFlowPointcut" class="org.springframework.aop.support.ControlFlowPointcut">
     <constructor-arg type="java.lang.Class"
       value="com.smart.advisor.WaiterDelegate"/>
     <constructor-arg type="java.lang.String" value="service"/>
   </bean>
   <bean id="controlFlowAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor"
-    p:advice-ref="greetingAdvice"
+    p:advice-ref="greetingAdvice3"
     p:pointcut-ref="controlFlowPointcut"/>
   <bean id="waiter3" class="org.springframework.aop.framework.ProxyFactoryBean"
     p:interceptorNames="controlFlowAdvisor"
     p:proxyTargetClass="true"
     p:target-ref="waiterTarget"/>
+
 
   <!-- 复合切点切面 -->
   <bean id="gcp" class="com.smart.advisor.GreetingComposablePointcut"/>
